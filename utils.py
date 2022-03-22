@@ -79,7 +79,6 @@ def extract_chips(coords_f: str, raster_dir: str, chip_size: int, pix_m: float, 
 
     rasters = [os.path.join(raster_dir, f'{t}.tif') for t in tiles]
     mosaic, xform = riomerge.merge(rasters)
-    mosaic_bounds = rio.transform.array_bounds(mosaic.shape[1], mosaic.shape[2], xform)
     
     # Get coordinates as pixel coordinates
 
